@@ -10,7 +10,7 @@ function MyLocation() {
   const [ubicacion, setUbicacion] = useState(null);
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: 'AIzaSyAi3QKn5t2zyS1_da8FcjOfHQVJ-t4KF1M', // 🔐 Reemplaza con tu API Key
+    googleMapsApiKey: 'AIzaSyAi3QKn5t2zyS1_da8FcjOfHQVJ-t4KF1M',
   });
 
   useEffect(() => {

@@ -2,6 +2,14 @@
   "name": "partnumbersbackend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/rdoxmes/",
+  "description": "A React application for managing part numbers with a backend API.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ElPepeMtz1981/RDOMES.git"
+  },
+  "author": "El Pepe Martinez <elpepemtz@gmail.com>",
   "dependencies": {
     "@react-google-maps/api": "^2.20.7",
     "@testing-library/dom": "^10.4.0",

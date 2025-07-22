@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 import * as api from '../api/partNumbersApi';
 
 const PartNumberForm = ({ editing, onSuccess }) => {
-  const [pn, setPN] = useState('');
+  const [partNumber, setPartNumber] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState(null);
 
   useEffect(() => {
     if (editing) {
-      setPN(editing.pn);
+      setPartNumber(editing.partNumber);
       setDescription(editing.description);
     } else {
-      setPN('');
+      setPartNumber('');
       setDescription('');
     }
     setError(null);
@@ -19,15 +19,16 @@ const PartNumberForm = ({ editing, onSuccess }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = { pn, description };
+    const data = { partNumber, description };
 
     try {
       if (editing) {
         await api.update(editing.id, { ...data, id: editing.id });
       } else {
+        console.log('Creating new part number:', data);
         await api.create(data);
       }
-      setPN('');
+      setPartNumber('');
       setDescription('');
       setError(null);
       onSuccess();
@@ -49,8 +50,8 @@ const PartNumberForm = ({ editing, onSuccess }) => {
             <input
               type="text"
               className="form-control"
-              value={pn}
-              onChange={(e) => setPN(e.target.value)}
+              value={partNumber}
+              onChange={(e) => setPartNumber(e.target.value)}
               required
             />
           </div>
